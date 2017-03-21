@@ -76,6 +76,14 @@ public class QuerySQL {
         printRes(res);
     }
     
+    public static void query4() throws SQLException {
+        PreparedStatement query;
+        String queryString = getQuery4();
+        query = con.prepareStatement(queryString);
+        int res = query.executeUpdate();
+        System.out.println(res);
+    }
+    
     private static String getQuery1() {
         return "select\n" +
 "        c.nombre,\n" +
@@ -112,7 +120,7 @@ public class QuerySQL {
     private static String getQuery2() {
         return ""
 //                + "INSERT INTO VI_ITEMRENTADO VALUES(5678567, 1026585665, 5, '151111', '161112')";
-        + "DELETE FROM VI_ITEMRENTADO WHERE id='5678567'";
+        + "DELETE FROM VI_ITEMRENTADO WHERE id='1356'";
     }
     
     private static String getQuery3() {
@@ -132,5 +140,9 @@ public class QuerySQL {
 //"        FROM\n" +
 //"            VI_ITEMS as i\n" +
 //"        left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id";
+    }
+
+    private static String getQuery4() {
+        return "INSERT INTO  VI_ITEMS VALUES(12344321,'Fun', 'Fun', '151212', 3000, 'CD', 'POP', 3)";
     }
 }
