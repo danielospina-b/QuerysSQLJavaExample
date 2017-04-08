@@ -1,2 +1,1 @@
-github pullrequest conflict in master test
-
+github pullrequest conflict in master test resolved
